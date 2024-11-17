@@ -1,0 +1,305 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: linear-gradient(to right, rgba(223, 235, 223, 0),rgb(242, 242, 242));
+    color: #3c2a24;
+}
+
+header {
+    background-image: linear-gradient(to right, rgba(223, 235, 223, 0),rgb(236, 56, 56));
+    color: #fff;
+    padding: 10px 0;
+}
+.logo {
+    width: 98px;
+    height: 116px;
+    position: absolute;
+    margin-top: 2px;
+    margin-right: 1300px;
+}
+
+
+nav {
+    display: flex;           
+    justify-content: center; 
+    align-items: center;     
+    padding: 20px 0;         
+    
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px; 
+}
+
+
+ul li a {
+    text-decoration: none;
+    color: #070707;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+ul li a i {
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+
+ul li a:hover {
+    color: #b09074; 
+    transform: scale(1.1); 
+}
+
+ul li a:hover i {
+    color: #e3c1b7; 
+}
+
+/* تنسيق زر "اشتري الآن" ليكون في أقصى يمين الصفحة */
+.buy-now-button {
+    position: absolute;
+    top: 20px;          /* المسافة من أعلى الصفحة */
+    right: 20px;        /* المسافة من يمين الصفحة */
+    background-color: #100101;  /* لون الخلفية للزر */
+    color: white;        /* لون النص */
+    padding: 10px 15px;  /* الحواف الداخلية */
+    border-radius: 5px;  /* الزوايا */
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;  /* إزالة الخط السفلي */
+    z-index: 1000;  /* للتأكد من أن الزر فوق جميع العناصر الأخرى */
+}
+
+/* تأثير عند التمرير على الزر */
+.buy-now-button:hover {
+    background-color: #f6f2f2;  /* تغيير لون الخلفية عند التمرير */
+    transform: scale(1.1);  /* تكبير الزر قليلاً عند التمرير */
+}
+
+
+
+
+.landing{
+    text-align: center;
+}
+
+
+/* إعدادات الحاوية الرئيسية للشرائح */
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 600px; /* يمكنك تعديل الارتفاع حسب احتياجك */
+    overflow: hidden;
+}
+
+/* إعدادات كل شريحة */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: slideAnimation 9s infinite;
+}
+
+/* إعدادات الصور داخل الشرائح */
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* الرسوم المتحركة */
+@keyframes slideAnimation {
+    0% { opacity: 1; }
+    33.33% { opacity: 0; }
+    66.66% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* توقيت الشرائح لتظهر الواحدة تلو الأخرى */
+.slide:nth-child(1) {
+    animation-delay: 0s;
+}
+.slide:nth-child(2) {
+    animation-delay: 3s;
+}
+.slide:nth-child(3) {
+    animation-delay: 6s;
+}
+
+
+.cards {
+    text-align: center;
+    padding: 20px;
+}
+
+.card {
+    display: inline-block;
+    width: 30%;
+    margin: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+}
+
+.forms {
+    padding: 20px;
+}
+
+.forms form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.forms label {
+    margin: 10px 0 5px;
+}
+.forms h2 {
+    text-align: center;
+}
+
+.forms input, .forms textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.forms button {
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.iforms div {
+    width: 100px;
+    height: 400px;
+}
+
+/* تنسيق عام للفوتر */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-section,
+.social-section,
+.footer-links {
+    margin: 20px;
+}
+
+/* تنسيق قسم الاتصال */
+.contact-section h3,
+.social-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.contact-section ul,
+.social-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-section ul li,
+.social-section ul li {
+    margin: 10px 0;
+}
+
+.contact-section a,
+.social-section a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.contact-section a:hover,
+.social-section a:hover {
+    color: #00bcd4;
+}
+
+/* تنسيق وسائل التواصل الاجتماعي */
+.social-section ul {
+    display: flex;
+    justify-content: center;
+}
+
+.social-section ul li {
+    margin: 0 10px;
+}
+
+/* أيقونات الوسائط الاجتماعية */
+.social-section i {
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-section i:hover {
+    color: #00bcd4;
+}
+.social-section i {
+    font-size: 1.5rem;
+    color: #ddd;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-section i:hover {
+    color: #00bcd4;
+    transform: scale(1.2);}
+
+
+/* حقوق النشر والروابط */
+.footer-links p {
+    margin: 20px 0 0;
+    font-size: 0.9rem;
+}
+
+.footer-links a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
